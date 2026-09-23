@@ -6,8 +6,6 @@ namespace SimulationConfig
 {
     // Particle configuration
     constexpr int PARTICLE_COUNT = 1000;
-
-    constexpr float PARTICLE_MASS = 1.0f;
     constexpr float PARTICLE_RADIUS = 4.0f;
 
     // Initial particle region
