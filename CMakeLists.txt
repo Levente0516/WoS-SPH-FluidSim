@@ -12,6 +12,8 @@ add_executable(SPH2D_test
     src/Rendering/rendering2D.cpp
     src/Solutions/SPH2D.cpp
     src/Simulation/ParticleSpawner.cpp
+    src/UniversalFunctions/Gravity.cpp
+    src/UniversalFunctions/UpdatePos.cpp
 )
 
 target_include_directories(SPH2D_test PRIVATE

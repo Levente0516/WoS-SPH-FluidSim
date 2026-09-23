@@ -224,6 +224,54 @@ src/Tests/SPH2D_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\SPH2D_test.dir\build.make CMakeFiles/SPH2D_test.dir/src/Tests/SPH2D_test.cpp.s
 .PHONY : src/Tests/SPH2D_test.cpp.s
 
+src/UniversalFunctions/Gravity.obj: src/UniversalFunctions/Gravity.cpp.obj
+.PHONY : src/UniversalFunctions/Gravity.obj
+
+# target to build an object file
+src/UniversalFunctions/Gravity.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SPH2D_test.dir\build.make CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj
+.PHONY : src/UniversalFunctions/Gravity.cpp.obj
+
+src/UniversalFunctions/Gravity.i: src/UniversalFunctions/Gravity.cpp.i
+.PHONY : src/UniversalFunctions/Gravity.i
+
+# target to preprocess a source file
+src/UniversalFunctions/Gravity.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SPH2D_test.dir\build.make CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.i
+.PHONY : src/UniversalFunctions/Gravity.cpp.i
+
+src/UniversalFunctions/Gravity.s: src/UniversalFunctions/Gravity.cpp.s
+.PHONY : src/UniversalFunctions/Gravity.s
+
+# target to generate assembly for a file
+src/UniversalFunctions/Gravity.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SPH2D_test.dir\build.make CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.s
+.PHONY : src/UniversalFunctions/Gravity.cpp.s
+
+src/UniversalFunctions/UpdatePos.obj: src/UniversalFunctions/UpdatePos.cpp.obj
+.PHONY : src/UniversalFunctions/UpdatePos.obj
+
+# target to build an object file
+src/UniversalFunctions/UpdatePos.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SPH2D_test.dir\build.make CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj
+.PHONY : src/UniversalFunctions/UpdatePos.cpp.obj
+
+src/UniversalFunctions/UpdatePos.i: src/UniversalFunctions/UpdatePos.cpp.i
+.PHONY : src/UniversalFunctions/UpdatePos.i
+
+# target to preprocess a source file
+src/UniversalFunctions/UpdatePos.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SPH2D_test.dir\build.make CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.i
+.PHONY : src/UniversalFunctions/UpdatePos.cpp.i
+
+src/UniversalFunctions/UpdatePos.s: src/UniversalFunctions/UpdatePos.cpp.s
+.PHONY : src/UniversalFunctions/UpdatePos.s
+
+# target to generate assembly for a file
+src/UniversalFunctions/UpdatePos.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\SPH2D_test.dir\build.make CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.s
+.PHONY : src/UniversalFunctions/UpdatePos.cpp.s
+
 # Help Target
 help:
 	@echo The following are some of the valid targets for this Makefile:
@@ -245,6 +293,12 @@ help:
 	@echo ... src/Tests/SPH2D_test.obj
 	@echo ... src/Tests/SPH2D_test.i
 	@echo ... src/Tests/SPH2D_test.s
+	@echo ... src/UniversalFunctions/Gravity.obj
+	@echo ... src/UniversalFunctions/Gravity.i
+	@echo ... src/UniversalFunctions/Gravity.s
+	@echo ... src/UniversalFunctions/UpdatePos.obj
+	@echo ... src/UniversalFunctions/UpdatePos.i
+	@echo ... src/UniversalFunctions/UpdatePos.s
 .PHONY : help
 
 

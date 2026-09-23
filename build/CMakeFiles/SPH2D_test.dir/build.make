@@ -131,12 +131,44 @@ CMakeFiles/SPH2D_test.dir/src/Simulation/ParticleSpawner.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SPH2D_test.dir/src/Simulation/ParticleSpawner.cpp.s"
 	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Egyetem\kutatas\WoSFluidSimulation\src\Simulation\ParticleSpawner.cpp -o CMakeFiles\SPH2D_test.dir\src\Simulation\ParticleSpawner.cpp.s
 
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj: CMakeFiles/SPH2D_test.dir/flags.make
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj: CMakeFiles/SPH2D_test.dir/includes_CXX.rsp
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj: C:/Egyetem/kutatas/WoSFluidSimulation/src/UniversalFunctions/Gravity.cpp
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj: CMakeFiles/SPH2D_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Egyetem\kutatas\WoSFluidSimulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj -MF CMakeFiles\SPH2D_test.dir\src\UniversalFunctions\Gravity.cpp.obj.d -o CMakeFiles\SPH2D_test.dir\src\UniversalFunctions\Gravity.cpp.obj -c C:\Egyetem\kutatas\WoSFluidSimulation\src\UniversalFunctions\Gravity.cpp
+
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Egyetem\kutatas\WoSFluidSimulation\src\UniversalFunctions\Gravity.cpp > CMakeFiles\SPH2D_test.dir\src\UniversalFunctions\Gravity.cpp.i
+
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Egyetem\kutatas\WoSFluidSimulation\src\UniversalFunctions\Gravity.cpp -o CMakeFiles\SPH2D_test.dir\src\UniversalFunctions\Gravity.cpp.s
+
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj: CMakeFiles/SPH2D_test.dir/flags.make
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj: CMakeFiles/SPH2D_test.dir/includes_CXX.rsp
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj: C:/Egyetem/kutatas/WoSFluidSimulation/src/UniversalFunctions/UpdatePos.cpp
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj: CMakeFiles/SPH2D_test.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir=C:\Egyetem\kutatas\WoSFluidSimulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj -MF CMakeFiles\SPH2D_test.dir\src\UniversalFunctions\UpdatePos.cpp.obj.d -o CMakeFiles\SPH2D_test.dir\src\UniversalFunctions\UpdatePos.cpp.obj -c C:\Egyetem\kutatas\WoSFluidSimulation\src\UniversalFunctions\UpdatePos.cpp
+
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.i"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Egyetem\kutatas\WoSFluidSimulation\src\UniversalFunctions\UpdatePos.cpp > CMakeFiles\SPH2D_test.dir\src\UniversalFunctions\UpdatePos.cpp.i
+
+CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.s"
+	C:\msys64\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Egyetem\kutatas\WoSFluidSimulation\src\UniversalFunctions\UpdatePos.cpp -o CMakeFiles\SPH2D_test.dir\src\UniversalFunctions\UpdatePos.cpp.s
+
 # Object files for target SPH2D_test
 SPH2D_test_OBJECTS = \
 "CMakeFiles/SPH2D_test.dir/src/Tests/SPH2D_test.cpp.obj" \
 "CMakeFiles/SPH2D_test.dir/src/Rendering/rendering2D.cpp.obj" \
 "CMakeFiles/SPH2D_test.dir/src/Solutions/SPH2D.cpp.obj" \
-"CMakeFiles/SPH2D_test.dir/src/Simulation/ParticleSpawner.cpp.obj"
+"CMakeFiles/SPH2D_test.dir/src/Simulation/ParticleSpawner.cpp.obj" \
+"CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj" \
+"CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj"
 
 # External object files for target SPH2D_test
 SPH2D_test_EXTERNAL_OBJECTS =
@@ -145,12 +177,14 @@ SPH2D_test.exe: CMakeFiles/SPH2D_test.dir/src/Tests/SPH2D_test.cpp.obj
 SPH2D_test.exe: CMakeFiles/SPH2D_test.dir/src/Rendering/rendering2D.cpp.obj
 SPH2D_test.exe: CMakeFiles/SPH2D_test.dir/src/Solutions/SPH2D.cpp.obj
 SPH2D_test.exe: CMakeFiles/SPH2D_test.dir/src/Simulation/ParticleSpawner.cpp.obj
+SPH2D_test.exe: CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj
+SPH2D_test.exe: CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj
 SPH2D_test.exe: CMakeFiles/SPH2D_test.dir/build.make
 SPH2D_test.exe: C:/msys64/mingw64/lib/libraylib.dll.a
 SPH2D_test.exe: CMakeFiles/SPH2D_test.dir/linkLibs.rsp
 SPH2D_test.exe: CMakeFiles/SPH2D_test.dir/objects1.rsp
 SPH2D_test.exe: CMakeFiles/SPH2D_test.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Egyetem\kutatas\WoSFluidSimulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Linking CXX executable SPH2D_test.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir=C:\Egyetem\kutatas\WoSFluidSimulation\build\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Linking CXX executable SPH2D_test.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\SPH2D_test.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -68,4 +68,6 @@ CMakeFiles/SPH2D_test.dir/src/Rendering/rendering2D.cpp.obj: \
  C:/msys64/mingw64/lib/gcc/x86_64-w64-mingw32/15.2.0/include/stdarg.h \
  C:/msys64/mingw64/include/stdarg.h \
  C:/msys64/mingw64/include/_mingw_stdarg.h \
- C:/Egyetem/kutatas/WoSFluidSimulation/src/Config/SimulationConfig.h
+ C:/Egyetem/kutatas/WoSFluidSimulation/src/Config/SimulationConfig.h \
+ C:/Egyetem/kutatas/WoSFluidSimulation/src/UniversalFunctions/Gravity.h \
+ C:/Egyetem/kutatas/WoSFluidSimulation/src/UniversalFunctions/UpdatePos.h

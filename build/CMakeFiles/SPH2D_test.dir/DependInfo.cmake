@@ -12,6 +12,8 @@ set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "C:/Egyetem/kutatas/WoSFluidSimulation/src/Simulation/ParticleSpawner.cpp" "CMakeFiles/SPH2D_test.dir/src/Simulation/ParticleSpawner.cpp.obj" "gcc" "CMakeFiles/SPH2D_test.dir/src/Simulation/ParticleSpawner.cpp.obj.d"
   "C:/Egyetem/kutatas/WoSFluidSimulation/src/Solutions/SPH2D.cpp" "CMakeFiles/SPH2D_test.dir/src/Solutions/SPH2D.cpp.obj" "gcc" "CMakeFiles/SPH2D_test.dir/src/Solutions/SPH2D.cpp.obj.d"
   "C:/Egyetem/kutatas/WoSFluidSimulation/src/Tests/SPH2D_test.cpp" "CMakeFiles/SPH2D_test.dir/src/Tests/SPH2D_test.cpp.obj" "gcc" "CMakeFiles/SPH2D_test.dir/src/Tests/SPH2D_test.cpp.obj.d"
+  "C:/Egyetem/kutatas/WoSFluidSimulation/src/UniversalFunctions/Gravity.cpp" "CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj" "gcc" "CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/Gravity.cpp.obj.d"
+  "C:/Egyetem/kutatas/WoSFluidSimulation/src/UniversalFunctions/UpdatePos.cpp" "CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj" "gcc" "CMakeFiles/SPH2D_test.dir/src/UniversalFunctions/UpdatePos.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

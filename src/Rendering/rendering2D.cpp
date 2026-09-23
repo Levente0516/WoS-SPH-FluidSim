@@ -3,6 +3,8 @@
 #include "Simulation/ParticleSpawner.h"
 #include "Objects/Particle.h"
 #include "Config/SimulationConfig.h"
+#include "UniversalFunctions/Gravity.h"
+#include "UniversalFunctions/UpdatePos.h"
 
 #include "raylib.h"
 
@@ -31,14 +33,18 @@ void Rendering2D::run(SPH2D& simulation)
         //Drawing bounding box
         DrawRectangleLines(minPositionR.x, minPositionR.y, (maxPositionR.x - minPositionR.x), (maxPositionR.y - minPositionR.y), RED);
         
-        for (auto particle : particles)
+        for (auto& particle : particles)
         {
-            
+            applyGravity(particle, dt);
         }
 
+        for (auto& particle : particles)
+        {
+            updatePosition(particle, dt);
+        }
 
         //Drawing particles
-        for (auto particle : particles)
+        for (auto& particle : particles)
         {
             DrawCircle(particle.position.x, particle.position.y, particle.radius, WHITE);
         }

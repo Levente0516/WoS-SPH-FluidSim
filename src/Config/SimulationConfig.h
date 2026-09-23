@@ -18,6 +18,7 @@ namespace SimulationConfig
     //constexpr float SMOOTHING_LENGTH = 20.0f;
 
     // Simulation
-    constexpr float TIME_STEP = 0.01f;
     constexpr float GRAVITY = 9.81f;
+    constexpr float PARTICLE_BOUNCE_DAMPENING = 0.8f;
+    constexpr float PARTICLE_VELOCITY_THRESHOLD = 0.1f;
 }
