@@ -1,3 +1,0 @@
-C:/Egyetem/kutatas/WoSFluidSimulation/build/CMakeFiles/SPH2D_test.dir
-C:/Egyetem/kutatas/WoSFluidSimulation/build/CMakeFiles/edit_cache.dir
-C:/Egyetem/kutatas/WoSFluidSimulation/build/CMakeFiles/rebuild_cache.dir
