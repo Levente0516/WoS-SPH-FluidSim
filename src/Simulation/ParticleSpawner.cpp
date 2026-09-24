@@ -22,7 +22,7 @@ std::vector<Particle> spawnParticles()
 
         float y = midY  + static_cast<float>(rand()) / RAND_MAX * (maxPosition.y - midY);
 
-        float particleMass = 10 + static_cast<float>(rand()) / RAND_MAX * 30;
+        float particleMass = 1.0f;
 
         Particle p({x, y}, particleMass, particleRadius);
 

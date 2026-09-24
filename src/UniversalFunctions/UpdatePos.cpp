@@ -14,14 +14,43 @@ void updatePosition(Particle& particle, float dt)
     particle.position.x += particle.velocity.x * dt;
     particle.position.y += particle.velocity.y * dt;
 
+    if (particle.position.x - particleRadiusU <= minPositionU.x)
+    {
+        particle.position.x = minPositionU.x + particleRadiusU;
+
+        if (particle.velocity.x < 0.0f)
+        {
+            particle.velocity.x *= -dampening;
+        }
+    }
+
+    if (particle.position.x + particleRadiusU >= maxPositionU.x)
+    {
+        particle.position.x = maxPositionU.x - particleRadiusU;
+
+        if (particle.velocity.x > 0.0f)
+        {
+            particle.velocity.x *= -dampening;
+        }
+    }
+
+    if (particle.position.y - particleRadiusU <= minPositionU.y)
+    {
+        particle.position.y = minPositionU.y + particleRadiusU;
+
+        if (particle.velocity.y < 0.0f)
+        {
+            particle.velocity.y *= -dampening;
+        }
+    }
+
     if (particle.position.y + particleRadiusU >= maxPositionU.y)
     {
         particle.position.y = maxPositionU.y - particleRadiusU;
-        particle.velocity.y *= -dampening;
-    }
 
-    if (fabs(particle.velocity.y) < velocityThreshold)
-    {
-        particle.velocity.y = 0.0f;
+        if (particle.velocity.y > 0.0f)
+        {
+            particle.velocity.y *= -dampening;
+        }
     }
 }
