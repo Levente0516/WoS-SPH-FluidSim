@@ -13,10 +13,7 @@
 
 Vector2 minPositionR = SimulationConfig::BOUNDING_BOX_MIN_POSITION;
 Vector2 maxPositionR = SimulationConfig::BOUNDING_BOX_MAX_POSITION;
-float gasConst = SimulationConfig::GAS_CONSTANT;
-float restingDensity = SimulationConfig::RESTING_DENSITY;
-float pressureScale = SimulationConfig::PRESSURE_SCALE;
-float densityScale = SimulationConfig::DENSITY_SCALE;
+
 
 Simulation2D::Simulation2D()
 {
@@ -65,14 +62,15 @@ void Simulation2D::run()
         //Calculate the density as well as pressure of all the particles
         for (auto& particle : particles)
         {
-            particle.density = getDenistyAtParticle(particle, particles) * densityScale;
-            particle.pressure = gasConst * (particle.density - restingDensity) * pressureScale;
+            particle.density = getDenistyAtParticle(particle, particles);
         }
 
         //Calculate pressure force and add it to velocity
         for (auto& particle : particles)
         {
-            Vector2 pressureForce = applyPressureForce(particle, particles);
+            Vector2 pressureForce = CalculatePressureForce(particle, particles);
+
+            //std::cout << "(" << pressureForce.x << "," <<pressureForce.y << ")" << std::endl;
 
             Vector2 pressureAcceleration = Vector2Scale(pressureForce, 1.0f / particle.mass);
 
@@ -94,9 +92,9 @@ void Simulation2D::run()
 
         DrawFPS(0,0);
 
-        for (int y = minPositionR.y; y < maxPositionR.y; y += 10)
+        for (int y = minPositionR.y; y < maxPositionR.y; y += 8)
         {
-            for (int x = minPositionR.x; x < maxPositionR.x; x += 10)
+            for (int x = minPositionR.x; x < maxPositionR.x; x += 8)
             {
                 Vector2 position = {
                     static_cast<float>(x),
@@ -106,7 +104,7 @@ void Simulation2D::run()
                 float pressure = getPressureAtPosition(position, particles);
 
                 // Map pressure to 0..1
-                float t = pressure / 20.0f;
+                float t = pressure / 10.0f;
                 t = Clamp(t, 0.0f, 1.0f);
 
                 Color color;
@@ -144,7 +142,7 @@ void Simulation2D::run()
         //Drawing particles
         for (auto& particle : particles)
         {
-            //std::cout <<particle.pressure << std::endl;
+            //std::cout << particle.pressure << std::endl;
             DrawCircle(particle.position.x, particle.position.y, particle.radius, BLACK);
         }
 

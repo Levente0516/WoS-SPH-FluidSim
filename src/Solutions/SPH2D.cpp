@@ -7,25 +7,27 @@
 #include <vector>
 
 float h = SimulationConfig::SMOOTHING_KERNEL_RADIUS;
+float gasConst = SimulationConfig::GAS_CONSTANT;
+float restingDensity = SimulationConfig::RESTING_DENSITY;
+float pressureScale = SimulationConfig::PRESSURE_SCALE;
+float densityScale = SimulationConfig::DENSITY_SCALE;
 
 //Smoothing Kernels (TODO: add mor for benchmarking later)
 //2D Poly6
 
-float SmoothingKernelPoly2D(float r, float h)
+float SmoothingKernelPoly6_2D(float r, float h)
 {
-    if (r < 0.0f || r > h)
-    {
-        return 0.0f;
-    }
+    if (r < 0.0f || r > h) {return 0.0f;}
 
-    float value = pow((h*h - r*r),3);
+    float coeff = 4.0f / (PI * pow(h,8));
+    float value = pow(((h*h)-(r*r)), 3);
 
-    return (4/(PI*pow(h,8))) * value;
+    return coeff * value;
 }
 
-//Gradient of the poly smoothing kernel
+//Derivate of the spiky smoothing kernel for pressure
 
-Vector2 GradientSmoothingKernelPoly2D(Vector2 rVec, float h)
+Vector2 DerivateSmoothingKernelSpiky2D(Vector2 rVec, float h)
 {
     float r = Vector2Length(rVec);
 
@@ -34,22 +36,16 @@ Vector2 GradientSmoothingKernelPoly2D(Vector2 rVec, float h)
         return {0.0f,0.0f};
     }
 
-    float value = pow((h*h - r*r),2);
-
-    return Vector2Scale(rVec,  -(24/(PI*pow(h,8))) * value); 
-}
-
-Vector2 GradientSmoothingKernelSpiky2D(Vector2 rVec, float h)
-{
-    float r = Vector2Length(rVec);
-    if (r <= 0.0001f || r > h) return {0.0f, 0.0f};
-
-    float coeff = -30.0f / (PI * pow(h, 5)); 
+    float coeff = -30 / (PI*pow(h,5));
     float value = pow(h - r, 2);
 
-    return Vector2Scale(Vector2Scale(rVec, 1.0f / r), coeff * value);
+    return Vector2Scale(Vector2Scale(rVec, 1.0f/r), coeff * value);
 }
 
+float ConvertDensityToPressure(float density)
+{
+    return gasConst * (density - restingDensity) * pressureScale;
+}
 
 /*
 SPH basic intuiton:
@@ -78,7 +74,7 @@ float getDenistyAtParticle(Particle particle, std::vector<Particle> particles)
 
     for (auto p : particles)
     {
-        sum += p.mass * SmoothingKernelPoly2D(Vector2Length(Vector2Subtract(particle.position, p.position)), h);
+        sum += p.mass * SmoothingKernelPoly6_2D(Vector2Length(Vector2Subtract(particle.position, p.position)), h);
     }
 
     return sum;
@@ -90,21 +86,26 @@ Pressure force:
 f_i^pressure = -sum(m_j * ((p_i + p_j)/2*rho_j) * GradientW(r_i - r_j, h))
 */
 
-Vector2 applyPressureForce(Particle particle, std::vector<Particle>particles)
+Vector2 CalculatePressureForce(Particle& particle, std::vector<Particle>& particles)
 {
     Vector2 pressureforce = {0.0f, 0.0f};
-    float sum = 0;
 
-    for (auto p : particles)
+    particle.pressure = ConvertDensityToPressure(particle.density);
+
+    for (auto& p : particles)
     {
-        if (p.density <= 0.0f)
-            continue;
+        if (&particle == &p) {continue;}
 
-        float helper = (particle.pressure + p.pressure)/(2*p.density);
-        pressureforce = Vector2Add(pressureforce, Vector2Scale(GradientSmoothingKernelSpiky2D(Vector2Subtract(particle.position, p.position), h), p.mass * helper));
+        p.pressure = ConvertDensityToPressure(p.density);
+
+        float helper = (particle.pressure + p.pressure) / (2 * p.density);
+
+        Vector2 dst = Vector2Subtract(particle.position, p.position);
+
+        pressureforce -= Vector2Scale(DerivateSmoothingKernelSpiky2D(dst, h), (p.mass * helper));
     }
 
-    return Vector2Scale(pressureforce, -1.0f);
+    return pressureforce;
 }
 
 float getPressureAtPosition(
@@ -124,7 +125,7 @@ float getPressureAtPosition(
         if (r > h)
             continue;
 
-        float weight = p.mass * SmoothingKernelPoly2D(r, h);
+        float weight = p.mass * SmoothingKernelPoly6_2D(r, h);
 
         weightedPressure +=
             weight * p.pressure / p.density;

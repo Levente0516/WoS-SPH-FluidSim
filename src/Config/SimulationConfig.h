@@ -16,9 +16,9 @@ namespace SimulationConfig
     constexpr float GRAVITY = 0.981f;
     constexpr float PARTICLE_BOUNCE_DAMPENING = 0.8f;
     constexpr float PARTICLE_VELOCITY_THRESHOLD = 0.001f;
-    constexpr float SMOOTHING_KERNEL_RADIUS = 100.0f;
+    constexpr float SMOOTHING_KERNEL_RADIUS = 25.0f;
     constexpr float GAS_CONSTANT = 1.0f;
     constexpr float RESTING_DENSITY = 0.0015f;
     constexpr float DENSITY_SCALE = 1.0f;
-    constexpr float PRESSURE_SCALE = 100000.0f;
+    constexpr float PRESSURE_SCALE = 10000.0f;
 }
