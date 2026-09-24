@@ -51,13 +51,13 @@ void Simulation2D::run()
     {
         float dt = GetFrameTime();
         
-        /*
+        
         //Apply Gravity to every particle
         for (auto& particle : particles)
         {
             applyGravity(particle, dt);
         }
-        */
+        
         
         //Calculate the density as well as pressure of all the particles
         for (auto& particle : particles)
@@ -92,6 +92,9 @@ void Simulation2D::run()
 
         DrawFPS(0,0);
 
+        // pressure field
+        /*
+        
         for (int y = minPositionR.y; y < maxPositionR.y; y += 8)
         {
             for (int x = minPositionR.x; x < maxPositionR.x; x += 8)
@@ -137,13 +140,13 @@ void Simulation2D::run()
                 DrawRectangle(x, y, 10, 10, color);
             }
         }
-
+        */
 
         //Drawing particles
         for (auto& particle : particles)
         {
             //std::cout << particle.pressure << std::endl;
-            DrawCircle(particle.position.x, particle.position.y, particle.radius, BLACK);
+            DrawCircle(particle.position.x, particle.position.y, particle.radius, WHITE);
         }
 
         EndDrawing();
