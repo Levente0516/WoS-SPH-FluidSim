@@ -9,8 +9,8 @@ find_package(raylib REQUIRED)
 
 add_executable(SPH2D_test
     src/Tests/SPH2D_test.cpp
-    src/Rendering/rendering2D.cpp
     src/Solutions/SPH2D.cpp
+    src/Simulation/Simulation2D.cpp
     src/Simulation/ParticleSpawner.cpp
     src/UniversalFunctions/Gravity.cpp
     src/UniversalFunctions/UpdatePos.cpp

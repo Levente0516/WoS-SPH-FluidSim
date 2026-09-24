@@ -1,12 +1,11 @@
-#include "Rendering/rendering2D.h"
+#include "Simulation/Simulation2D.h"
 #include "Solutions/SPH2D.h"
 
 int main()
 {
-    SPH2D simulation;
-    Rendering2D renderer;
+    Simulation2D program;
 
-    renderer.run(simulation);
+    program.run();
 
     return 0;
 }

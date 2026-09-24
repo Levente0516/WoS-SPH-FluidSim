@@ -1,21 +1,21 @@
-#include "rendering2D.h"
+#include "Simulation2D.h"
 #include "Solutions/SPH2D.h"
-#include "Simulation/ParticleSpawner.h"
+#include "ParticleSpawner.h"
 #include "Objects/Particle.h"
 #include "Config/SimulationConfig.h"
 #include "UniversalFunctions/Gravity.h"
 #include "UniversalFunctions/UpdatePos.h"
-
 #include "raylib.h"
+#include "raymath.h"
 
 Vector2 minPositionR = SimulationConfig::BOUNDING_BOX_MIN_POSITION;
 Vector2 maxPositionR = SimulationConfig::BOUNDING_BOX_MAX_POSITION;
 
-Rendering2D::Rendering2D()
+Simulation2D::Simulation2D()
 {
 }
 
-void Rendering2D::run(SPH2D& simulation)
+void Simulation2D::run()
 {
     InitWindow(1200, 800, "WoS Fluid Simulation");
     SetTargetFPS(60);
@@ -33,11 +33,19 @@ void Rendering2D::run(SPH2D& simulation)
         //Drawing bounding box
         DrawRectangleLines(minPositionR.x, minPositionR.y, (maxPositionR.x - minPositionR.x), (maxPositionR.y - minPositionR.y), RED);
         
+        //Apply Gravity to every particle
         for (auto& particle : particles)
         {
             applyGravity(particle, dt);
         }
 
+        //Calculate the density of all the particles
+        for (auto& particle : particles)
+        {
+            particle.density = getDenistyAtParticle(particle, particles);
+        }
+
+        //Update the position of all particles
         for (auto& particle : particles)
         {
             updatePosition(particle, dt);
@@ -46,7 +54,7 @@ void Rendering2D::run(SPH2D& simulation)
         //Drawing particles
         for (auto& particle : particles)
         {
-            DrawCircle(particle.position.x, particle.position.y, particle.radius, WHITE);
+            DrawCircle(particle.position.x, particle.position.y, particle.radius, BLUE);
         }
 
         EndDrawing();

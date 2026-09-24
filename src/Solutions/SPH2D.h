@@ -1,9 +1,10 @@
 #pragma once
 
-class SPH2D
-{
-    public:
-        SPH2D();
+#include "SPH2D.h"
+#include "Objects/Particle.h"
+#include "Config/SimulationConfig.h"
 
-        void update(float dt);
-};
+#include <vector>
+
+float SmoothingKernelPoly(float r, float h);
+float getDenistyAtParticle(Particle particle, std::vector<Particle> particles);
